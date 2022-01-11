@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bmi.css">
+	<script type="text/javascript">
+	function SetData(){
+		var fullData=window.location.href.split("?")[1]
+		var data=fullData.split("&")
+		name=data[0].split("=")[1]
+		age=data[1].split("=")[1]
+		phone=data[2].split("=")[1]
+		gender=data[3].split("=")[1]
+		document.getElementById("name1").innerHTML=name
+		document.getElementById("age1").innerHTML=age
+		document.getElementById("gender1").innerHTML=gender
+		document.getElementById("phone1").innerHTML=phone
+	}
+	</script>
+</head>
+<body onload="SetData()">
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form>
+		<p><label>Name: </label><div id="name1"></div></p>
+		<p><label>Age: </label><div id="age1"></div></p>
+		<p><label>Gender: </label><div id="gender1"></div></p>
+		<p><label>Phone: </label><div id="phone1"></div></p>
+        <p><label>Height in  </label><input type="text" id="height">CM</p>
+        <p><label>Weight in  </label><input type="text" id="weight">KG</p>
+        <button>Calculate</button>
+        <div id="results"></div>
+        <div id="weight-guide">
+        <h3>BMI Weight Guide</h3>
+        <p>Under Weight = Less than 18.6</p>
+        <p>Normal Range = 18.6 and 24.9</p>
+        <p>Overweight = Greater than 24.9</p>
+        </div>
+        </form>
+        </div>
+</body>
+<script src="script.js"></script>
+</html>
